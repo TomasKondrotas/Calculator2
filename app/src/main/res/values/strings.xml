@@ -1,3 +1,34 @@
 <resources>
     <string name="app_name">Calculator2</string>
+    <string name="btn1">1</string>
+    <string name="btn2">2</string>
+    <string name="btn3">3</string>
+    <string name="btn4">4</string>
+    <string name="btn5">5</string>
+    <string name="btn6">6</string>
+    <string name="btn7">7</string>
+    <string name="btn8">8</string>
+    <string name="btn9">9</string>
+    <string name="btn0">0</string>
+    <string name="btn.">.</string>
+    <string name="btnPlus">+</string>
+    <string name="btnEq">=</string>
+    <string name="btnMin">-</string>
+    <string name="btnMulti">*</string>
+    <string name="btnDiv">/</string>
+    <string name="btnPer">%</string>
+    <string name="btnUnKnow">1/x</string>
+    <string name="btnDel">←</string>
+    <string name="btnCE">CE</string>
+    <string name="btnClear">C</string>
+    <string name="btnChange">±</string>
+    <string name="btnRoot">√</string>
+    <string name="btnMC">MC</string>
+    <string name="btnMR">MR</string>
+    <string name="btnMS">MS</string>
+    <string name="btnMPlus">M+</string>
+    <string name="btnMMin">M-</string>
+    <string name="choseFirst">Chose first number</string>
+    <string name="afterTypeSelect">you can press = or edit your second number</string>
+
 </resources>
