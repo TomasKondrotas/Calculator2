@@ -30,5 +30,7 @@
     <string name="btnMMin">M-</string>
     <string name="choseFirst">Chose first number</string>
     <string name="afterTypeSelect">you can press = or edit your second number</string>
+    <string name="operation">You havent chosen an operation</string>
+    <string name="delEmpty">Field empty</string>
 
 </resources>

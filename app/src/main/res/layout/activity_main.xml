@@ -78,6 +78,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="onBtnDelClick"
             android:textSize="50dp"
             android:text="@string/btnDel" />
 
@@ -94,6 +95,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="onBtnClearClick"
             android:textSize="25sp"
             android:text="@string/btnClear" />
 
@@ -102,6 +104,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="onBtnChangeClick"
             android:textSize="25sp"
             android:text="@string/btnChange" />
 
@@ -127,6 +130,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="onBtn7Click"
             android:textSize="25sp"
             android:text="@string/btn7" />
 
@@ -135,6 +139,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="onBtn8Click"
             android:textSize="25sp"
             android:text="@string/btn8" />
 
@@ -143,6 +148,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="onBtn9Click"
             android:textSize="25sp"
             android:text="@string/btn9" />
 
@@ -176,6 +182,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="onBtn4Click"
             android:textSize="25sp"
             android:text="@string/btn4" />
 
@@ -184,6 +191,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="onBtn5Click"
             android:textSize="25sp"
             android:text="@string/btn5" />
 
@@ -192,6 +200,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="onBtn6Click"
             android:textSize="25sp"
             android:text="@string/btn6" />
 
@@ -258,6 +267,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:onClick="onBtn3Click"
                 android:textSize="25sp"
                 android:text="@string/btn3" />
 
@@ -282,6 +292,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
+                android:onClick="onBtn0Click"
                 android:textSize="25sp"
                 android:text="@string/btn0"/>
 
@@ -311,6 +322,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="onBtnEq"
             android:textSize="25sp"
             android:text="@string/btnEq" />
 
