@@ -28,9 +28,14 @@
     <string name="btnMS">MS</string>
     <string name="btnMPlus">M+</string>
     <string name="btnMMin">M-</string>
-    <string name="choseFirst">Chose first number</string>
+    <string name="choseFirst">Chose number</string>
     <string name="afterTypeSelect">you can press = or edit your second number</string>
     <string name="operation">You havent chosen an operation</string>
     <string name="delEmpty">Field empty</string>
+    <string name="Clear">Field was cleared</string>
+    <string name="allClear">All fields were cleared</string>
+    <string name="DivZero">Cant divide by zero</string>
+    <string name="RootNeg">Wrong impute data</string>
+
 
 </resources>

@@ -6,13 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.lang.Math;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView viewAnswer;
     String prevAnswer ="";
     String newAnswer ="";
-    int answer = 0;
+    float answer = 0;
     String decision ="";
 
     @Override
@@ -84,7 +85,14 @@ public class MainActivity extends AppCompatActivity {
         decision ="";
         prevAnswer ="";
         viewAnswer.setText("");
+        Toast.makeText(this, getString(R.string.allClear), Toast.LENGTH_SHORT).show();
 
+    }
+    public void onBtnCEClick(View view)
+    {
+        prevAnswer ="";
+        viewAnswer.setText(prevAnswer);
+        Toast.makeText(this, getString(R.string.Clear), Toast.LENGTH_SHORT).show();
     }
     public void onBtnDelClick(View view)
     {
@@ -95,16 +103,16 @@ public class MainActivity extends AppCompatActivity {
         {
             Toast.makeText(this, getString(R.string.delEmpty), Toast.LENGTH_SHORT).show();
         }
-
     }
-    public void onBtnChangeClick()
+    public void onBtnChangeClick(View view)
     {
-        int changeSign = Integer.parseInt(prevAnswer);
-
-        prevAnswer = Integer.toString(changeSign);
-
+        answer = Float.parseFloat(prevAnswer);
+        answer = answer * -1;
+        viewAnswer.setText(String.valueOf(answer));
+        prevAnswer = String.valueOf(answer);
+        answer = 0;
     }
-    public void onBtnPlus(View view)
+    public void onBtnPlusClick(View view)
     {
         if (prevAnswer.isEmpty())
         {
@@ -113,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
         else if (newAnswer.isEmpty())
             {
                newAnswer = prevAnswer;
-               prevAnswer = "0";
+               prevAnswer = "";
                decision = "+";
                viewAnswer.setText("");
             }
@@ -123,31 +131,156 @@ public class MainActivity extends AppCompatActivity {
             }
     }
 
+    public void onBtnMinClick(View view)
+    {
+        if (prevAnswer.isEmpty())
+        {
+            Toast.makeText(this, getString(R.string.choseFirst), Toast.LENGTH_SHORT).show();
+        }
+        else if (newAnswer.isEmpty())
+        {
+            newAnswer = prevAnswer;
+            prevAnswer = "";
+            decision = "-";
+            viewAnswer.setText("");
+        }
+        else
+        {
+            Toast.makeText(this, getString(R.string.afterTypeSelect), Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void onBtnMultiClick(View view)
+    {
+        if (prevAnswer.isEmpty())
+        {
+            Toast.makeText(this, getString(R.string.choseFirst), Toast.LENGTH_SHORT).show();
+        }
+        else if (newAnswer.isEmpty())
+        {
+            newAnswer = prevAnswer;
+            prevAnswer = "";
+            decision = "*";
+            viewAnswer.setText("");
+        }
+        else
+        {
+            Toast.makeText(this, getString(R.string.afterTypeSelect), Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void onBtnDivClick(View view)
+    {
+        if (prevAnswer.isEmpty())
+        {
+            Toast.makeText(this, getString(R.string.choseFirst), Toast.LENGTH_SHORT).show();
+        }
+        else if (newAnswer.isEmpty())
+        {
+            newAnswer = prevAnswer;
+            prevAnswer = "";
+            decision = "/";
+            viewAnswer.setText("");
+        }
+        else
+        {
+            Toast.makeText(this, getString(R.string.afterTypeSelect), Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void onBtnRootClick(View view)
+    {
+        if (prevAnswer.isEmpty())
+        {
+            Toast.makeText(this, getString(R.string.choseFirst), Toast.LENGTH_SHORT).show();
+        }
+        else if (decision.equals("")|| decision.equals("√"))
+        {
+            decision = "√";
+            logic(decision);
+        }
+        else
+            {
+                Toast.makeText(this, getString(R.string.afterTypeSelect), Toast.LENGTH_SHORT).show();
+            }
+    }
     public void onBtnEq(View view)
     {
-       View(decision);
+        logic(decision);
     }
-    public void View(String Decision) {
+    public void logic(String Decision) {
 
         switch (Decision) {
             case "+":
-                answer = Integer.parseInt(prevAnswer) + Integer.parseInt(newAnswer);
-                viewAnswer.setText(String.valueOf(answer));
-                prevAnswer = String.valueOf(answer);
-                clearData();
-                break;
-            case "CAT":
+                if (prevAnswer.equals(""))
+                {
+                    Toast.makeText(this, getString(R.string.delEmpty), Toast.LENGTH_SHORT).show();
+                    break;
+                }else
+                {
+                    answer = Float.parseFloat(prevAnswer) + Float.parseFloat(newAnswer);
+                    viewAnswer.setText(String.valueOf(answer));
+                    prevAnswer = String.valueOf(answer);
+                    clearData();
+                    break;
+                }
+            case "-":
+                if (prevAnswer.equals(""))
+                {
+                    Toast.makeText(this, getString(R.string.delEmpty), Toast.LENGTH_SHORT).show();
+                    break;
+                }else
+                    {
+                    answer = Float.parseFloat(newAnswer) - Float.parseFloat(prevAnswer);
+                    viewAnswer.setText(String.valueOf(answer));
+                    prevAnswer = String.valueOf(answer);
+                    clearData();
+                    break;
+                }
+            case "*":
+                if (prevAnswer.equals(""))
+                {
+                    Toast.makeText(this, getString(R.string.delEmpty), Toast.LENGTH_SHORT).show();
+                    break;
+                }else {
+                    answer = Float.parseFloat(newAnswer) * Float.parseFloat(prevAnswer);
+                    viewAnswer.setText(String.valueOf(answer));
+                    prevAnswer = String.valueOf(answer);
+                    clearData();
+                    break;
+                }
+            case "/":
+                if (prevAnswer.equals(""))
+                {
+                    Toast.makeText(this, getString(R.string.delEmpty), Toast.LENGTH_SHORT).show();
+                    break;
+                } else  if (Float.parseFloat(prevAnswer)==0.0)
+                {
+                    Toast.makeText(this, getString(R.string.DivZero), Toast.LENGTH_SHORT).show();
+                    break;
+                }else
+                {
+                    answer = Float.parseFloat(newAnswer) / Float.parseFloat(prevAnswer);
+                    viewAnswer.setText(String.valueOf(answer));
+                    prevAnswer = String.valueOf(answer);
+                    clearData();
+                    break;
+                }
+            case "√":
 
-                break;
-            case "TIGER":
-
-                break;
+                answer = (float) Math.sqrt(Double.parseDouble(prevAnswer));
+                if (Math.sqrt(Double.parseDouble(prevAnswer))>0)
+                {
+                    answer = (float) Math.sqrt(Double.parseDouble(prevAnswer));
+                    viewAnswer.setText(String.valueOf(answer));
+                    prevAnswer = String.valueOf(answer);
+                    clearData();
+                    break;
+                }else
+                {
+                    Toast.makeText(this, getString(R.string.RootNeg), Toast.LENGTH_SHORT).show();
+                    break;
+                }
             default:
                 Toast.makeText(this, getString(R.string.operation), Toast.LENGTH_SHORT).show();
                 break;
         }
     }
-
-
-
 }
